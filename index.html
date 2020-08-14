@@ -103,7 +103,7 @@ tumblr_controls, .tmblr-iframe{display:none !important;}
 		<div id="info">
 			Teer
 		</div>
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="wiwkqclj8v62zpt"></script>
+
 		<script type="module">
 
 			import * as THREE from 'https://threejs.org/build/three.module.js';
@@ -152,11 +152,11 @@ scene.add( light );
 				scene.add( grid );
 
                 
-        var texture = new THREE.TextureLoader().load( 'https://3dmodels3dmodels.000webhostapp.com/get_image.php' );
+        var texture = new THREE.TextureLoader().load( 'base_color filmic.jpg' );
         var material = new THREE.MeshToonMaterial( { map: texture } );
 				// model
 				var loader = new FBXLoader(); 
-				loader.load( 'https://3dmodels3dmodels.000webhostapp.com/get_fbx.php', function ( object ) {
+				loader.load( 'teer.fbx', function ( object ) {
 
 					mixer = new THREE.AnimationMixer( object );
 
