@@ -108,10 +108,11 @@ tumblr_controls, .tmblr-iframe{display:none !important;}
 	</head>
 
 	<body>
+		<div id='container' class="blur">
 		<div id="info">
 			Teer
 		</div>
-		
+		</div>
 		<script type="module">
 
 			import * as THREE from 'https://threejs.org/build/three.module.js';
@@ -133,8 +134,7 @@ tumblr_controls, .tmblr-iframe{display:none !important;}
  
 			function init() {
  
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+				container = document.getElementById('container');
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
 				camera.position.set( 100, 200, 300 );
