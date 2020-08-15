@@ -92,6 +92,14 @@ a, button, input, select {
 	padding: 10px;
 }
 
+.blur{
+filter: blur(100px);
+}
+.no-blur{
+transition: all 1s;
+ filter: blur(0px); 
+}
+			
 		 
 tumblr_controls, .tmblr-iframe{display:none !important;}   
 
@@ -150,9 +158,12 @@ scene.add( light );
 				grid.material.opacity = 0.2;
 				grid.material.transparent = true;
 				scene.add( grid );
+ const loadingManager = new THREE.LoadingManager( () => {
 
+    const loadingScreen = document.getElementById( 'container' );
+    loadingScreen.classList.add( 'no-blur' );
                 
-        var texture = new THREE.TextureLoader().load( 'base_color filmic.jpg' );
+        var texture = new THREE.TextureLoader(LoadingManager).load( 'base_color filmic.jpg' );
         var material = new THREE.MeshToonMaterial( { map: texture } );
 				// model
 				var loader = new FBXLoader(); 
