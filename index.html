@@ -210,7 +210,7 @@ scene.add( light );
 			
 			var manager = new THREE.LoadingManager();
 				manager.onProgress = function ( item, loaded, total ) {
-  				console.log((loaded / total * 100) + '%');
+  				document.getElementById('info').innerText=(loaded / total * 100) + '%';
 				};
 			
 			
